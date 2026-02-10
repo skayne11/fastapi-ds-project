@@ -59,7 +59,7 @@ Interface web moderne et élégante pour interagir avec l'API FastAPI Data Scien
 # Lancer tous les services (API + Frontend + Jupyter)
 docker-compose up --build
 
-# Frontend accessible sur http://localhost:3000
+# Frontend accessible sur http://localhost:4000
 # API sur http://localhost:8000
 # Jupyter sur http://localhost:8888
 ```
@@ -69,13 +69,13 @@ docker-compose up --build
 ```bash
 # Avec Python
 cd frontend
-python -m http.server 3000
+python -m http.server 4000
 
 # Avec Node.js
-npx serve . -p 3000
+npx serve . -p 4000
 ```
 
-Puis ouvrir : **http://localhost:3000**
+Puis ouvrir : **http://localhost:4000**
 
 ---
 
@@ -276,7 +276,7 @@ Vérifiez que Plotly est chargé :
 
 ## 📝 Licence
 
-Projet pédagogique - Ayedesso - 2026
+Projet pédagogique - Skayne - 2026
 
 ---
 
