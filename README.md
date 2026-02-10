@@ -377,13 +377,13 @@ Les notebooks dans `notebooks/` démontrent l'utilisation complète de l'API pou
 
 ## 📝 Licence
 
-Projet pédagogique - Ayedesso - 2026
+Projet pédagogique - Skayne - 2026
 
 ---
 
 ## 👥 Auteur
 
-**Ayedesso**  
+**Skayne**  
 Projet fil rouge FastAPI - Parcours Data Scientist
 
 ---
