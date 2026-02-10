@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: fastapi-ds-api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Montage pour le développement (code synchronisé)
+      - ./app:/app/app
+      # Montage pour les modèles et données
+      - ./models:/app/models
+      - ./data:/app/data
+      # Montage pour les notebooks (optionnel)
+      - ./notebooks:/app/notebooks
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+
+  # Service Jupyter optionnel pour les notebooks
+  jupyter:
+    build: .
+    container_name: fastapi-ds-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/app/notebooks
+      - ./app:/app/app
+      - ./data:/app/data
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
+    restart: unless-stopped
