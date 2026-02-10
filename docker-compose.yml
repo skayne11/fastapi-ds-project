@@ -31,3 +31,13 @@ services:
       - ./data:/app/data
     command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
     restart: unless-stopped
+
+  # Service Frontend (interface web)
+  frontend:
+    image: nginx:alpine
+    container_name: fastapi-ds-frontend
+    ports:
+      - "4000:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    restart: unless-stopped

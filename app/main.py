@@ -6,6 +6,7 @@ Point d'entrée principal
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import dataset, clean, eda, mv, ml, ml2
+from fastapi.staticfiles import StaticFiles
 
 # Créer l'application FastAPI
 app = FastAPI(
@@ -44,6 +45,8 @@ app.include_router(mv.router, prefix="/mv", tags=["TP3 - Multivarié"])
 app.include_router(ml.router, prefix="/ml", tags=["TP4 - ML Baseline"])
 app.include_router(ml2.router, prefix="/ml2", tags=["TP5 - ML Avancé"])
 
+# Servir l'interface web
+app.mount("/", StaticFiles(directory="app/static", html=True), name="static")
 
 @app.get("/", tags=["Root"])
 def root():
