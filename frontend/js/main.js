@@ -502,7 +502,7 @@ async function getEdaPlots() {
     for (const [plotName, plotJson] of Object.entries(artifacts)) {
         const plotId = `plot-${plotName}-${plotIndex++}`;
         const plotData = JSON.parse(plotJson);
-        Plotly.newPlot(plotId, plotData.data, plotData.layout || {}, {responsive: true});
+        Plotly.newPlot(plotId, plotData.data, plotData.layout || {}, {responsive: true, displayModeBar: true});
     }
     
     showToast('Visualisations créées', `${Object.keys(artifacts).length} graphiques générés`, 'success');

@@ -616,8 +616,15 @@ body {
     margin-top: var(--spacing-md);
     padding: var(--spacing-md);
     background: var(--bg-card);
-    border-radius: 8px;
+    border-radius: 12px;
+    height: 420px;
+    width: 100%;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
 }
+
+
 
 /* === FOOTER === */
 .footer {
